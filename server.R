@@ -16,6 +16,11 @@ shinyServer(
                         myData
                 })
                 
+                output$sqr <- renderText({
+                        x <- (input$number)*(input$number)
+                        x
+                })
+                
                 # Display a Graph for Worldwide Tiger Population for the Year 2016
                 output$currentPopulation <- renderPlot({
                         x = subset(myData, Year=='2016')

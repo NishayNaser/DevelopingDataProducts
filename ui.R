@@ -19,6 +19,16 @@ shinyUI(
                 titlePanel("Tiger Population Analysis"),
                 sidebarLayout(
                         sidebarPanel(
+                                helpText("Select a Number so that server.R may calculate the 
+                                         Square Root and Display it in the Visualizations Tab"),
+                                numericInput(
+                                        "number",
+                                        "Select A Number from 1 to 20",
+                                        min = 1,
+                                        max = 20,
+                                        value = 2
+                                        ),
+                                
                                 helpText("Select one Species and one Country at a time. Please 
                                         remember to uncheck the selected options before selecting 
                                         another option. Due to a lack of available data some 
@@ -66,6 +76,11 @@ shinyUI(
                                         # Creating a Tab to Display Visualizations
                                         tabPanel(
                                                 p(icon("line-chart"), "Visualisations"),
+                                                
+                                                p("
+                                                  "),
+                                                p("CALCULATING AND PRINTING THE OUTPUT TO PROVE CALCULATION:"),
+                                                textOutput("sqr"),
                                                 
                                                 p("
                                                   "),
